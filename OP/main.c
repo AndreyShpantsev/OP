@@ -59,11 +59,17 @@ void push_center(l_list** list, int data, int len) {
 }
 
 int main() {
+	system("chcp 1251");
 	l_list* list = create_node(1);
-	push_front(&list, 2);
-	push_back(&list, 3);
-	push_back(&list, 4);
-	push_center(&list, 0, GetSize(&list));
+	int x[4];
+	for (int i = 0; i < 4; i++) {
+		printf("Введите элемент: ");
+		scanf("%d", &x[i]);
+	}
+	push_front(&list, x[0]);
+	push_back(&list, x[1]);
+	push_back(&list, x[2]);
+	push_center(&list, x[3], GetSize(&list));
 
 	l_list* tmp = list;
 
